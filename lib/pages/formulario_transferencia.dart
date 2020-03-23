@@ -70,6 +70,8 @@ class FormularioTransferencia extends StatelessWidget {
               if (numeroConta != null && valor != null) {
                 final transferenciaCriada = Transferencia(valor, numeroConta);
                 debugPrint('$transferenciaCriada');
+                Scaffold.of(context).showSnackBar(
+                    SnackBar(content: Text('$transferenciaCriada')));
               }
             },
           ),
