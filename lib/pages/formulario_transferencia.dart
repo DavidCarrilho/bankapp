@@ -1,6 +1,10 @@
+import 'package:app_alura/model/transferencia.dart';
 import 'package:flutter/material.dart';
 
 class FormularioTransferencia extends StatelessWidget {
+  final TextEditingController _controladorNumeroConta = TextEditingController();
+  final TextEditingController _controladorValor = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,6 +17,7 @@ class FormularioTransferencia extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
+              controller: _controladorNumeroConta,
               keyboardType: TextInputType.number,
               style: TextStyle(fontSize: 20),
               decoration: InputDecoration(
@@ -22,17 +27,20 @@ class FormularioTransferencia extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
+              controller: _controladorValor,
               keyboardType: TextInputType.number,
               style: TextStyle(fontSize: 20),
               decoration: InputDecoration(
-                  icon: Icon(Icons.monetization_on, color: Colors.amber,),
+                  icon: Icon(
+                    Icons.monetization_on,
+                    color: Colors.amber,
+                  ),
                   labelText: 'Valor',
                   hintText: '0.00'),
             ),
           ),
           const SizedBox(height: 30),
           RaisedButton(
-            onPressed: () {},
             textColor: Colors.white,
             padding: const EdgeInsets.all(0.0),
             child: Container(
@@ -54,6 +62,16 @@ class FormularioTransferencia extends StatelessWidget {
                 ),
               ),
             ),
+            onPressed: () {
+              final int numeroConta =
+                  int.tryParse(_controladorNumeroConta.text);
+              final double valor = double.tryParse(_controladorValor.text);
+
+              if (numeroConta != null && valor != null) {
+                final transferenciaCriada = Transferencia(valor, numeroConta);
+                debugPrint('$transferenciaCriada');
+              }
+            },
           ),
         ],
       ),
