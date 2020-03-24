@@ -1,4 +1,4 @@
-import 'package:app_alura/model/transferencia.dart';
+import 'package:bankapp/model/transferencia.dart';
 import 'package:flutter/material.dart';
 
 class FormularioTransferencia extends StatelessWidget {

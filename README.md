@@ -1,4 +1,4 @@
-# app_alura
+# bankapp
 
 A new Flutter project.
 

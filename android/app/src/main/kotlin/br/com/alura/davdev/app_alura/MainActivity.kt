@@ -1,4 +1,4 @@
-package br.com.alura.davdev.app_alura
+package br.com.davdev.bankapp
 
 import android.os.Bundle
 

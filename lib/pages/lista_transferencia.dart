@@ -1,5 +1,5 @@
-import 'package:app_alura/model/transferencia.dart';
-import 'package:app_alura/pages/item_transferencia.dart';
+import 'package:bankapp/model/transferencia.dart';
+import 'package:bankapp/pages/item_transferencia.dart';
 import 'package:flutter/material.dart';
 
 class ListaTransferencia extends StatelessWidget {

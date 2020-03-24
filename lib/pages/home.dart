@@ -1,4 +1,4 @@
-import 'package:app_alura/pages/formulario_transferencia.dart';
+import 'package:bankapp/pages/formulario_transferencia.dart';
 import 'package:flutter/material.dart';
 
 class BankApp extends StatelessWidget {
