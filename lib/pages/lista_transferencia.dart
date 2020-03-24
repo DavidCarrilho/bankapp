@@ -2,15 +2,16 @@ import 'package:bankapp/model/transferencia.dart';
 import 'package:bankapp/pages/item_transferencia.dart';
 import 'package:flutter/material.dart';
 
+import '../model/transferencia.dart';
+import 'formulario_transferencia.dart';
+
 class ListaTransferencia extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          'Tranfereência',
-          textDirection: TextDirection.ltr,
-        ),
+        title: Text('Tranferência'),
+        centerTitle: true,
       ),
       body: Column(
         children: <Widget>[
@@ -21,7 +22,14 @@ class ListaTransferencia extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: null,
+        onPressed: () {
+          final Future<Transferencia> future =
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return FormularioTransferencia();
+          }));
+          future.then(
+              (transferenciaRecebida) => debugPrint('$transferenciaRecebida'));
+        },
         child: Icon(Icons.add),
       ),
     );

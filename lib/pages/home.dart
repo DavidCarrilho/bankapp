@@ -1,5 +1,6 @@
-import 'package:bankapp/pages/formulario_transferencia.dart';
 import 'package:flutter/material.dart';
+
+import 'lista_transferencia.dart';
 
 class BankApp extends StatelessWidget {
   @override
@@ -7,7 +8,7 @@ class BankApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: FormularioTransferencia(),
+        body: ListaTransferencia(),
       ),
     );
   }
