@@ -18,7 +18,7 @@ class _ListaTransferenciaState extends State<ListaTransferencia> {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.attach_money, color: Colors.amberAccent, size: 40),
-        title: Text('Tranferência'),
+        title: Text('Tranferência', style: TextStyle(color: Colors.amberAccent),),
         centerTitle: true,
       ),
       body: ListView.builder(
