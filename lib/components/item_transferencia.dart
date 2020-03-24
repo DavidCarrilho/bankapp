@@ -1,4 +1,4 @@
-import 'package:bankapp/model/transferencia.dart';
+import 'package:bankapp/models/transferencia.dart';
 import 'package:flutter/material.dart';
 
 class ItemTransferencia extends StatelessWidget {
@@ -11,7 +11,7 @@ class ItemTransferencia extends StatelessWidget {
     return Card(
       child: ListTile(
         leading: Icon(Icons.monetization_on, color: Colors.amber, size: 30),
-        title: Text(_transferencia.valor.toString()),
+        title: Text(" Valor Transferido $_transferencia.valor".toString()),
         subtitle: Text(_transferencia.numeroConta.toString()),
       ),
     );

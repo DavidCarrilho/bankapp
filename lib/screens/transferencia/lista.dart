@@ -1,9 +1,9 @@
-import 'package:bankapp/model/transferencia.dart';
+import 'package:bankapp/components/item_transferencia.dart';
+import 'package:bankapp/models/transferencia.dart';
+import 'package:bankapp/screens/transferencia/formulario.dart';
 import 'package:flutter/material.dart';
 
-import '../model/transferencia.dart';
-import 'formulario_transferencia.dart';
-import 'item_transferencia.dart';
+const _textoHome = "Tranferência";
 
 class ListaTransferencia extends StatefulWidget {
   final List<Transferencia> _transferencias = List();
@@ -18,7 +18,7 @@ class _ListaTransferenciaState extends State<ListaTransferencia> {
     return Scaffold(
       appBar: AppBar(
         leading: Icon(Icons.attach_money, color: Colors.amberAccent, size: 40),
-        title: Text('Tranferência', style: TextStyle(color: Colors.amberAccent),),
+        title: Text(_textoHome, style: TextStyle(color: Colors.amberAccent)),
         centerTitle: true,
       ),
       body: ListView.builder(
@@ -37,8 +37,6 @@ class _ListaTransferenciaState extends State<ListaTransferencia> {
           }));
           future.then((transferenciaRecebida) {
             Future.delayed(Duration(seconds: 1), () {
-              debugPrint('chegou no then do future');
-              debugPrint('$transferenciaRecebida');
               if (transferenciaRecebida != null) {
                 setState(() {
                   widget._transferencias.add(transferenciaRecebida);

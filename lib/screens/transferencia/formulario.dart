@@ -1,9 +1,17 @@
-import 'package:bankapp/model/transferencia.dart';
+import 'package:bankapp/models/transferencia.dart';
 import 'package:flutter/material.dart';
+
+const _tituloAppBar = "Criando Transferência";
+const _rotuloValor = "Valor";
+const _rotuloConta = "Número da conta";
+const _dicaValor = "0.00";
+const _dicaConta = "XXXX-X";
+const _textoBotao = "Confirmar";
 
 class FormularioTransferencia extends StatefulWidget {
   @override
-  _FormularioTransferenciaState createState() => _FormularioTransferenciaState();
+  _FormularioTransferenciaState createState() =>
+      _FormularioTransferenciaState();
 }
 
 class _FormularioTransferenciaState extends State<FormularioTransferencia> {
@@ -15,7 +23,7 @@ class _FormularioTransferenciaState extends State<FormularioTransferencia> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Criando Transferência"),
+          title: Text(_tituloAppBar),
           centerTitle: true,
         ),
         body: SingleChildScrollView(
@@ -28,7 +36,7 @@ class _FormularioTransferenciaState extends State<FormularioTransferencia> {
                   keyboardType: TextInputType.number,
                   style: TextStyle(fontSize: 20),
                   decoration: InputDecoration(
-                      labelText: 'Número da conta', hintText: 'XXXX-X'),
+                      labelText: _rotuloConta, hintText: _dicaConta),
                 ),
               ),
               Padding(
@@ -42,8 +50,8 @@ class _FormularioTransferenciaState extends State<FormularioTransferencia> {
                         Icons.monetization_on,
                         color: Colors.amber,
                       ),
-                      labelText: 'Valor',
-                      hintText: '0.00'),
+                      labelText: _rotuloValor,
+                      hintText: _dicaValor),
                 ),
               ),
               const SizedBox(height: 30),
@@ -52,19 +60,19 @@ class _FormularioTransferenciaState extends State<FormularioTransferencia> {
                 padding: const EdgeInsets.all(0.0),
                 child: Container(
                   decoration: const BoxDecoration(
-                    // gradient: LinearGradient(
-                    //   colors: <Color>[
-                    //     Color(0xFF0D47A1),
-                    //     Color(0xFF1976D2),
-                    //     Color(0xFF42A5F5),
-                    //   ],
-                    // ),
-                  ),
+                      // gradient: LinearGradient(
+                      //   colors: <Color>[
+                      //     Color(0xFF0D47A1),
+                      //     Color(0xFF1976D2),
+                      //     Color(0xFF42A5F5),
+                      //   ],
+                      // ),
+                      ),
                   padding: const EdgeInsets.all(10.0),
                   child: Padding(
                     padding: const EdgeInsets.only(right: 8, left: 8),
                     child: const Text(
-                      'Confirmar',
+                      _textoBotao,
                       style: TextStyle(fontSize: 20),
                     ),
                   ),
@@ -81,8 +89,6 @@ class _FormularioTransferenciaState extends State<FormularioTransferencia> {
     final double valor = double.tryParse(_controladorValor.text);
     if (numeroConta != null && valor != null) {
       final transferenciaCriada = Transferencia(valor, numeroConta);
-      debugPrint('Criando transferência');
-      debugPrint('$transferenciaCriada');
       Navigator.pop(context, transferenciaCriada);
     }
   }

@@ -1,6 +1,6 @@
+import 'package:bankapp/screens/transferencia/lista.dart';
 import 'package:flutter/material.dart';
 
-import 'lista_transferencia.dart';
 
 class BankApp extends StatelessWidget {
   @override
