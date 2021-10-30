@@ -3,9 +3,9 @@
 A new Flutter project.
 
 <p float="left">
-  <img src="screenshot/bankapp2.png" width="200" heitght="100">
-  <img src="screenshot/bankapp1.png" width="200" heitght="100">
-  <img src="screenshot/bankapp3.png" width="200" heitght="100">
+  <img src="screenshot/bankapp2.png" width="200">
+  <img src="screenshot/bankapp1.png" width="200">
+  <img src="screenshot/bankapp3.png" width="200">
 </p>
 
 
